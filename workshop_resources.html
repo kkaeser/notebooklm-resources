@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Level Up Your Learning with Google NotebookLM - Resources</title>
-    <!-- Chosen Palette: Calm Teal & Slate -->
-    <!-- Application Structure Plan: The application is designed as a single-page, vertical-scrolling resource hub. This structure is highly intuitive and accessible on all devices. The information is grouped into two logical categories ("Official Google Resources" and "Educational Technology Insights") to help users quickly find what they need. Each resource is presented in a self-contained, interactive "card" which is more engaging and scannable than a simple list, improving the overall user experience and encouraging exploration. -->
-    <!-- Visualization & Content Choices: Report Info: A list of URLs and descriptions for educators. Goal: To inform and provide easy access. Viz/Presentation Method: Interactive HTML cards styled with Tailwind CSS. Each card contains a title, description, and a clear call-to-action button. Interaction: A subtle hover effect on each card provides visual feedback, and the "Visit Site" button opens the corresponding link in a new tab. Justification: This card-based layout is visually appealing, organizes information clearly, and makes the primary action (accessing the resource) effortless. It's a significant usability improvement over a static list. Library/Method: HTML and Tailwind CSS. No complex JavaScript or chart libraries are needed, ensuring the page is fast, lightweight, and reliable. -->
+    <!-- Chosen Palette: Calm Teal, Slate & Indigo -->
+    <!-- Application Structure Plan: The application is designed as a single-page, vertical-scrolling resource hub. This structure is highly intuitive and accessible on all devices. The information is grouped into three logical categories ("Official Google Resources", "Educational Technology Insights", and "Kevin's Favorite AI Tools") to help users quickly find what they need. Each resource is presented in a self-contained, interactive "card" which is more engaging and scannable than a simple list, improving the overall user experience and encouraging exploration. -->
+    <!-- Visualization & Content Choices: Report Info: A list of URLs and descriptions for educators, now with an added category of specific AI tools. Goal: To inform and provide easy access. Viz/Presentation Method: Interactive HTML cards styled with Tailwind CSS. Each card contains a title, description, and a clear call-to-action button. Interaction: A subtle hover effect on each card provides visual feedback, and the "Visit Site" button opens the corresponding link in a new tab. Justification: This card-based layout is visually appealing, organizes information clearly, and makes the primary action (accessing the resource) effortless. The addition of a new category further enhances organization. Library/Method: HTML and Tailwind CSS. No complex JavaScript or chart libraries are needed, ensuring the page is fast, lightweight, and reliable. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,7 +79,7 @@
             </section>
 
             <!-- Section 2: EdTech Insights & Reviews -->
-            <section id="edtech-insights">
+            <section id="edtech-insights" class="mb-16">
                 <div class="flex items-center mb-8">
                      <div class="bg-sky-600 p-3 rounded-full mr-4">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -116,6 +116,56 @@
                             <p class="text-slate-600 mb-4 text-sm">Discusses practical applications of NotebookLM for faculty, including pedagogical innovation and supporting student understanding.</p>
                         </div>
                         <a href="https://www.fgcu.edu/digitallearning/digital-learning-blog/02-24-2025-notebooklm" target="_blank" rel="noopener noreferrer" class="bg-sky-600 text-white font-semibold py-2 px-4 rounded-lg text-center transition-colors duration-300 hover:bg-sky-700 mt-4 inline-block">Read Article</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Kevin's Favorite AI Tools -->
+            <section id="kevins-favorites" class="mb-16">
+                <div class="flex items-center mb-8">
+                     <div class="bg-indigo-600 p-3 rounded-full mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.196L7.204 9.176l-7.204.093c-.93.01-1.309 1.157-.615 1.76l5.584 4.802-1.688 7.027c-.206.857.731 1.547 1.487 1.056l6.398-4.225 6.398 4.225c.756.491 1.693-.199 1.487-1.056l-1.688-7.027 5.584-4.802c.694-.603.315-1.75-.615-1.76l-7.204-.093-3.845-6.98c-.394-.717-1.405-.717-1.799 0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-900">Kevin's Favorite AI Tools</h2>
+                        <p class="text-slate-500">A selection of AI tools that can further enhance your teaching and learning experiences.</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card for Gemini -->
+                    <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-slate-100">
+                        <div>
+                            <h3 class="font-bold text-xl mb-2 text-indigo-700">Gemini (by Google)</h3>
+                            <p class="text-slate-600 mb-4 text-sm">Google's AI assistant that helps educators brainstorm, summarize, create content, and quickly answer questions.</p>
+                        </div>
+                        <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg text-center transition-colors duration-300 hover:bg-indigo-700 mt-4 inline-block">Explore Gemini</a>
+                    </div>
+                    <!-- Card for Enlighten AI -->
+                    <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-slate-100">
+                        <div>
+                            <h3 class="font-bold text-xl mb-2 text-indigo-700">Enlighten AI</h3>
+                            <p class="text-slate-600 mb-4 text-sm">An AI grading tool where teachers train the AI to grade papers in their specific grading style.</p>
+                        </div>
+                        <a href="https://example.com/enlighten-ai" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg text-center transition-colors duration-300 hover:bg-indigo-700 mt-4 inline-block">Learn More</a>
+                    </div>
+                    <!-- Card for Curipod -->
+                    <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-slate-100">
+                        <div>
+                            <h3 class="font-bold text-xl mb-2 text-indigo-700">Curipod</h3>
+                            <p class="text-slate-600 mb-4 text-sm">An interactive presentation tool that uses AI to generate questions, polls, and drawings to engage students in lessons.</p>
+                        </div>
+                        <a href="https://curipod.com/" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg text-center transition-colors duration-300 hover:bg-indigo-700 mt-4 inline-block">Visit Curipod</a>
+                    </div>
+                    <!-- Card for Question Well -->
+                    <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-slate-100">
+                        <div>
+                            <h3 class="font-bold text-xl mb-2 text-indigo-700">Question Well</h3>
+                            <p class="text-slate-600 mb-4 text-sm">An AI-powered platform that helps teachers quickly generate a variety of high-quality questions from any text or topic.</p>
+                        </div>
+                        <a href="https://questionwell.ai/" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg text-center transition-colors duration-300 hover:bg-indigo-700 mt-4 inline-block">Visit Question Well</a>
                     </div>
                 </div>
             </section>
