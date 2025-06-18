@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canva vs. Adobe Express Workshop Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F0F4F8;
+        }
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            background-color: #F7FFF7;
+            color: #1A535C;
+            scroll-snap-align: start;
+            border-bottom: 8px solid #FF6B6B;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .slide:last-child {
+            border-bottom: none;
+        }
+        .chart-container {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            margin: 1rem auto;
+            height: 250px;
+            max-height: 350px;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 300px;
+                max-height: 400px;
+            }
+        }
+        .slide-content {
+            max-width: 900px;
+            width: 100%;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        }
+        .nav-button {
+            background-color: #4ECDC4;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .nav-button:hover {
+            background-color: #3BBFBA;
+            transform: translateY(-2px);
+        }
+        .nav-button:disabled {
+            background-color: #A0AEC0;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        .text-accent-canva { color: #4ECDC4; }
+        .text-accent-adobe { color: #FF6B6B; }
+    </style>
+</head>
+<body class="overflow-hidden">
+
+    <div id="presentation-container" class="relative w-screen h-screen flex flex-col items-center justify-center">
+
+        <!-- Slide 1: Title Slide -->
+        <div id="slide-1" class="slide active-slide">
+            <div class="slide-content">
+                <h1 class="text-5xl md:text-6xl font-bold text-[#1A535C] mb-4">Canva vs. Adobe Express</h1>
+                <p class="text-2xl md:text-3xl text-[#4ECDC4] mt-2">The Ultimate Creative Showdown: A Workshop</p>
+                <p class="text-lg md:text-xl text-gray-600 mt-6 max-w-2xl mx-auto">Who will win the creative crown? Let's explore together!</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Workshop Introduction -->
+        <div id="slide-2" class="slide hidden">
+            <div class="slide-content">
+                <h2 class="text-4xl font-bold text-[#1A535C] mb-6">Your Creative Journey Today</h2>
+                <ul class="list-none space-y-4 text-xl md:text-2xl text-gray-700">
+                    <li class="flex items-center justify-center"><span class="text-3xl mr-3 text-accent-canva">💡</span> A 1-Hour Interactive Exploration</li>
+                    <li class="flex items-center justify-center"><span class="text-3xl mr-3 text-accent-adobe">🔥</span> Discovering Canva & Adobe Express</li>
+                    <li class="flex items-center justify-center"><span class="text-3xl mr-3 text-accent-canva">📚</span> Special Focus on "Education Versions"</li>
+                    <li class="flex items-center justify-center"><span class="text-3xl mr-3 text-accent-adobe">🏆</span> Finding the "Best" Tool for Your Needs</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 3: Team Canva Introduction -->
+        <div id="slide-3" class="slide hidden">
+            <div class="slide-content">
+                <h2 class="text-4xl font-bold text-[#1A535C] mb-6">Canva: Your Creative Companion 🎨</h2>
+                <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-4">Canva makes design easy for everyone, helping you create stunning visuals, no experience needed.</p>
+                <ul class="list-none space-y-3 text-left text-lg md:text-xl mx-auto max-w-xl">
+                    <li class="flex items-start"><span class="text-2xl mr-3 text-accent-canva">✔️</span> **Super Easy to Use:** Simple drag-and-drop, quick to learn.</li>
+                    <li class="flex items-start"><span class="text-2xl mr-3 text-accent-canva">✔️</span> **Template Wonderland:** Thousands of ready-made designs for anything you need.</li>
+                    <li class="flex items-start"><span class="text-2xl mr-3 text-accent-canva">✔️</span> **Work Together, Learn Together:** Great for group projects and skill building.</li>
+                    <li class="flex items-start"><span class="text-2xl mr-3 text-accent-canva">✔️</span> **Accessible & Affordable:** Powerful features, often free to start!</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 4: Team Adobe Express Introduction -->
+        <div id="slide-4" class="slide hidden">
+            <div class="slide-content">
+                <h2 class="text-4xl font-bold text-[#1A535C] mb-6">Adobe Express: Unleash Professional Power ⚡️</h2>
+                <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-4">Adobe Express offers pro-level tools, smart AI, and connects seamlessly with other Adobe apps.</p>
+                <ul class="list-none space-y-3 text-left text-lg md:text-xl mx-auto max-w-xl">
+                    <li class="flex items-start"><span class="text-2xl mr-3 text-accent-adobe">✔️</span> **Adobe Creative Cloud Connected:** Works effortlessly with Photoshop, Illustrator, and more.</li>
+                    <li class="flex items-start"><span class="text-2xl mr-3 text-accent-adobe">✔️</span> **Smart AI Features:** Use Firefly AI for amazing image and text effects.</li>
+                    <li class="flex items-start"><span class="text-2xl mr-3 text-accent-adobe">✔️</span> **Consistent Branding:** Keep your designs looking professional and on-brand.</li>
+                    <li class="flex items-start"><span class="text-2xl mr-3 text-accent-adobe">✔️</span> **Polished Results:** Elevate your visuals with advanced touches.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 5: Template Tussle Chart -->
+        <div id="slide-5" class="slide hidden">
+            <div class="slide-content">
+                <h2 class="text-4xl font-bold text-[#1A535C] mb-6">Feature Face-Off: Template Showdown</h2>
+                <p class="text-lg text-gray-700 mb-4">See how many templates each platform offers to get you started quickly!</p>
+                <div class="chart-container">
+                    <canvas id="templateChart"></canvas>
+                </div>
+                <p class="text-sm text-gray-500 mt-2">Canva: 250k+ Free, 610k+ Pro | Adobe Express: 350k+ Premium</p>
+            </div>
+        </div>
+
+        <!-- Slide 6: Font Fight Chart -->
+        <div id="slide-6" class="slide hidden">
+            <div class="slide-content">
+                <h2 class="text-4xl font-bold text-[#1A535C] mb-6">Feature Face-Off: The Font Frenzy</h2>
+                <p class="text-lg text-gray-700 mb-4">Explore the vast font libraries at your fingertips in each platform.</p>
+                <div class="chart-container">
+                    <canvas id="fontChart"></canvas>
+                </div>
+                 <p class="text-sm text-gray-500 mt-2">Canva: ~4k Fonts | Adobe Express: ~30k+ Premium Fonts</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Education Advantage Intro -->
+        <div id="slide-7" class="slide hidden">
+            <div class="slide-content">
+                <h2 class="text-4xl font-bold text-[#1A535C] mb-6">Education Advantage: Tools for Every Learner!</h2>
+                <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">Both platforms offer amazing free versions specifically for students and educators. Let's see how they compare!</p>
+            </div>
+        </div>
+
+        <!-- Slide 8: Canva for Education Chart -->
+        <div id="slide-8" class="slide hidden">
+            <div class="slide-content">
+                <h2 class="text-4xl font-bold text-[#1A535C] mb-6 text-accent-canva">Canva for Education</h2>
+                <p class="text-lg text-gray-700 mb-4">Get access to all Canva Pro features, completely free for eligible K-12 students and teachers. Perfect for classroom projects!</p>
+                <div class="chart-container">
+                    <canvas id="canvaEduChart"></canvas>
+                </div>
+                <p class="text-sm text-gray-500 mt-2">Canva for Education provides thousands of ready-to-use templates tailored for the classroom.</p>
+            </div>
+        </div>
+
+        <!-- Slide 9: Adobe Express for Education -->
+        <div id="slide-9" class="slide hidden">
+            <div class="slide-content">
+                <h2 class="text-4xl font-bold text-[#1A535C] mb-6 text-accent-adobe">Adobe Express for Education</h2>
+                <p class="text-lg text-gray-700 mb-4">Free for all campus employees, students, faculty, and staff. Your gateway to professional creativity!</p>
+                <ul class="list-none space-y-3 text-left text-lg mx-auto max-w-xl">
+                    <li class="flex items-start"><span class="text-2xl mr-3 text-accent-adobe">✅</span> Free access to Express Premium features.</li>
+                    <li class="flex items-start"><span class="text-2xl mr-3 text-accent-adobe">✅</span> Connects with Photoshop & Illustrator assets.</li>
+                    <li class="flex items-start"><span class="text-2xl mr-3 text-accent-adobe">✅</span> Prepares you for a creative career path.</li>
+                </ul>
+                <p class="text-sm text-gray-500 mt-2">This tool helps you gain real-world skills and integrate with industry-standard creative tools.</p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Workshop Flow Part 1 -->
+        <div id="slide-10" class="slide hidden">
+            <div class="slide-content">
+                <h2 class="text-4xl font-bold text-[#1A535C] mb-6">Our Creative Journey: Part 1</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <div>
+                        <h3 class="font-bold text-2xl text-[#1A535C] mb-2">First 15 mins: Canva's Vision</h3>
+                        <p class="text-gray-700">We'll explore how Canva makes design incredibly simple, highlighting its vast templates and how it helps anyone create visuals quickly and affordably. Get ready for a quick demo!</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-2xl text-[#1A535C] mb-2">Next 15 mins: Adobe Express's Vision</h3>
+                        <p class="text-gray-700">Then, we'll dive into Adobe Express, showcasing its powerful AI features, how it connects to the Creative Cloud, and its strengths for consistent branding. Another quick demo awaits!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Workshop Flow Part 2 -->
+        <div id="slide-11" class="slide hidden">
+            <div class="slide-content">
+                <h2 class="text-4xl font-bold text-[#1A535C] mb-6">Our Creative Journey: Part 2</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <div>
+                        <h3 class="font-bold text-2xl text-[#1A535C] mb-2">Next 20 mins: The Creative Debate</h3>
+                        <p class="text-gray-700">Now, for the fun part! We'll playfully debate the strengths of each tool, discussing common questions like "Do Canva designs look generic?" or "Is Adobe Express too complex?".</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-2xl text-[#1A535C] mb-2">Final 5 mins: Your Questions, Our Insights</h3>
+                        <p class="text-gray-700">We'll open the floor for your questions! We'll wrap up by sharing our final thoughts on how to pick the best tool for your unique creative needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Conclusion -->
+        <div id="slide-12" class="slide hidden">
+            <div class="slide-content">
+                <h2 class="text-5xl font-bold text-[#1A535C] mb-6">The Verdict (or Friendly Draw!)</h2>
+                <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-6">Both Canva and Adobe Express are powerful tools, each excelling in different areas.</p>
+                <ul class="list-none space-y-4 text-xl md:text-2xl text-gray-700">
+                    <li class="flex items-center justify-center"><span class="text-3xl mr-3 text-accent-canva">💡</span> **Canva:** Best for Simplicity, Speed, & Accessibility for beginners.</li>
+                    <li class="flex items-center justify-center"><span class="text-3xl mr-3 text-accent-adobe">⚡️</span> **Adobe Express:** Best for Power, Professional Integration, & Brand Control.</li>
+                </ul>
+                <p class="text-xl md:text-2xl font-bold text-[#4ECDC4] mt-8">The "Best" tool is the one that best suits YOUR specific needs!</p>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="absolute bottom-4 flex space-x-4">
+            <button id="prevBtn" class="nav-button">Previous</button>
+            <button id="nextBtn" class="nav-button">Next</button>
+        </div>
+
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        const wrapText = (text, charLimit) => {
+            const words = text.split(' ');
+            let currentLine = '';
+            const lines = [];
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).length > charLimit && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = currentLine ? `${currentLine} ${word}` : word;
+                }
+            });
+            lines.push(currentLine);
+            return lines;
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const chartColors = {
+            canva: '#4ECDC4',
+            adobe: '#FF6B6B',
+            bg1: '#F7FFF7',
+            text: '#1A535C',
+            accent: '#FFE66D',
+        };
+
+        const initializeCharts = () => {
+            if (window.templateChartInstance) window.templateChartInstance.destroy();
+            if (window.fontChartInstance) window.fontChartInstance.destroy();
+            if (window.canvaEduChartInstance) window.canvaEduChartInstance.destroy();
+
+            const templateData = {
+                labels: ['Canva Free', 'Canva Pro', 'Adobe Express Premium'],
+                datasets: [{
+                    label: 'Number of Templates',
+                    data: [250000, 610000, 350000],
+                    backgroundColor: [chartColors.canva, chartColors.accent, chartColors.adobe],
+                    borderColor: chartColors.bg1,
+                    borderWidth: 2
+                }]
+            };
+            const templateCtx = document.getElementById('templateChart');
+            if (templateCtx) {
+                window.templateChartInstance = new Chart(templateCtx, {
+                    type: 'bar',
+                    data: templateData,
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            title: { display: false },
+                            tooltip: { callbacks: { title: tooltipTitleCallback } }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value / 1000 + 'k';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const fontData = {
+                labels: ['Canva (Free & Pro)', 'Adobe Express Premium'],
+                datasets: [{
+                    label: 'Number of Fonts',
+                    data: [4000, 30000],
+                    backgroundColor: [chartColors.canva, chartColors.adobe],
+                    borderColor: chartColors.bg1,
+                    borderWidth: 4
+                }]
+            };
+            const fontCtx = document.getElementById('fontChart');
+            if (fontCtx) {
+                window.fontChartInstance = new Chart(fontCtx, {
+                    type: 'doughnut',
+                    data: fontData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { position: 'top' },
+                            title: { display: false },
+                            tooltip: { callbacks: { title: tooltipTitleCallback } }
+                        }
+                    }
+                });
+            }
+
+            const canvaEduData = {
+                labels: [
+                    wrapText('Class Worksheets', 16), 
+                    wrapText('Classroom Presentations', 16), 
+                    wrapText('Educational Infographics', 16), 
+                    wrapText('Classroom Posters', 16)
+                ],
+                datasets: [{
+                    label: 'Canva for Education Templates',
+                    data: [20000, 11000, 11000, 13000],
+                    backgroundColor: ['#4ECDC4', '#45B7AA', '#3DAA9F', '#359E94'],
+                    borderColor: chartColors.bg1,
+                    borderWidth: 2
+                }]
+            };
+            const canvaEduCtx = document.getElementById('canvaEduChart');
+            if (canvaEduCtx) {
+                window.canvaEduChartInstance = new Chart(canvaEduCtx, {
+                    type: 'polarArea',
+                    data: canvaEduData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: true, position: 'bottom' },
+                            title: { display: false },
+                            tooltip: { callbacks: { title: tooltipTitleCallback } }
+                        },
+                        scales: {
+                            r: {
+                                ticks: {
+                                    backdropColor: 'rgba(255, 255, 255, 0.75)'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        };
+
+        const showSlide = (index) => {
+            slides.forEach((slide, i) => {
+                slide.classList.add('hidden');
+                slide.classList.remove('active-slide');
+            });
+            slides[index].classList.remove('hidden');
+            slides[index].classList.add('active-slide');
+            currentSlide = index;
+            updateNavButtons();
+            
+            if (index === 4 || index === 5 || index === 7) {
+                initializeCharts();
+            }
+        };
+
+        const updateNavButtons = () => {
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        };
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                showSlide(currentSlide + 1);
+            }
+        });
+
+        window.onload = () => {
+            showSlide(0);
+            initializeCharts();
+        };
+    </script>
+</body>
+</html>
